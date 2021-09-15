@@ -1,8 +1,18 @@
 ##########source: https://www.biostars.org/p/449688/
+#Istall phyloseq, DESeq2, and curatedMetagenomicData
+#if (!requireNamespace("BiocManager", quietly = TRUE))
+#  install.packages("BiocManager")
+#BiocManager::install("phyloseq")
+#BiocManager::install("DESeq2")
+#BiocManager::install("curatedMetagenomicData")
+
+#Loading the library
 library(phyloseq)
 library(DESeq2)
 library(ggplot2)
 library(curatedMetagenomicData)
+
+#Getting the source file
 mphlanin <- read.csv("merged_abundance_table_reformatted.txt", sep = "\t", strip.white = T, stringsAsFactors = F, row.names = 1)
 metadata <- read.delim("metadata.txt", header=TRUE, sep = "\t")
 metadatadf <- data.frame(metadata)
